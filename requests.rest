@@ -1,0 +1,16 @@
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email":"coach1@gmail.com",
+    "password":"admin"
+}
+###
+
+POST http://localhost:3000/lobby/create-lobby
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.NQ.KnePWoy2qlHIlAAuD2y1zFWno76sMZ4mzs67_JyQYlQ
+Content-Type: application/json
+
+{
+    "lobbyName": "foot"
+}
