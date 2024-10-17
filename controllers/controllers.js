@@ -1,7 +1,7 @@
 const express = require('express')
-const bodyParser = ('body-parser');
-const mysql = ('mysql2');
-const bcrypt = ('bcrypt');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2');
+const bcrypt = require('bcrypt');
 const router = express.Router()
 
 // Route d'inscription
