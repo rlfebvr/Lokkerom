@@ -2,8 +2,8 @@ POST http://localhost:3000/user/signup
 Content-Type: application/json
 
 {
-    "email": "coach2@gmail.com",
-    "password": "coach2"
+    "email": "player2@gmail.com",
+    "password": "player2"
 }
 
 ###
@@ -12,8 +12,8 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email":"coach1@gmail.com",
-    "password":"coach1"
+    "email": "player3@gmail.com",
+    "password": "player3"
 }
 ###
 
@@ -32,6 +32,16 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Ng.wzDO5FU7Xvwv64WJSLOtrX3JO1jlf4H3PSF
 Content-Type: application/json
 
 {
-    "memberId": "2",
+    "memberId": "6",
     "lobbyId": "1"
+}
+
+###
+
+POST http://localhost:3000/lobby/sendMessage
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Mw.DskTki35U_FXh-7hcUot3Ktb5ZNNrzn_37P14nqe6MY
+Content-Type: application/json
+
+{
+    "message": "ts"
 }
