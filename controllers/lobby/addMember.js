@@ -7,9 +7,10 @@ const app = express.Router()
 //ajouter des membres à l'équipe
 app.post('/',authenticateToken, async(req, res) => {
     const {memberId, lobbyId} = req.body;
-    const {coachId} = req.user.name;
+    const coachId = req.user;
+    console.log("coachID= "+ coachId)
     try {
-
+       
         const [lobby] = await connection.query('SELECT * FROM lobbies WHERE id = ? and admin_id = ?', [lobbyId, coachId])
         if (lobby.length === 0) {
             return res.status(403).json({message: "seul l'admin peut ajouter des membres"})

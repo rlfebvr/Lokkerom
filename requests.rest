@@ -1,16 +1,37 @@
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+    "email": "coach2@gmail.com",
+    "password": "coach2"
+}
+
+###
+
 POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
     "email":"coach1@gmail.com",
-    "password":"admin"
+    "password":"coach1"
 }
 ###
 
 POST http://localhost:3000/lobby/create-lobby
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.NQ.KnePWoy2qlHIlAAuD2y1zFWno76sMZ4mzs67_JyQYlQ
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Ng.wzDO5FU7Xvwv64WJSLOtrX3JO1jlf4H3PSFNt78pQFQ
 Content-Type: application/json
 
 {
     "lobbyName": "foot"
+}
+
+###
+
+POST http://localhost:3000/lobby/add-member
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Ng.wzDO5FU7Xvwv64WJSLOtrX3JO1jlf4H3PSFNt78pQFQ
+Content-Type: application/json
+
+{
+    "memberId": "2",
+    "lobbyId": "1"
 }
