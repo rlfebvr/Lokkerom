@@ -11,6 +11,8 @@ router.use('/create-lobby', createLobbyRoute);
 import addMemberRoute from './addMember.js'
 router.use('/add-member', addMemberRoute);
 
+import editMessageRoute from './editMessage.js';
+router.use('/edit-message', editMessageRoute);
 
 
 
