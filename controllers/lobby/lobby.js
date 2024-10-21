@@ -14,6 +14,11 @@ router.use('/add-member', addMemberRoute);
 import sendMessageRoute from './sendMessage.js'
 router.use('/sendMessage', sendMessageRoute);
 
+import sendMessageRoute from './sendMessage.js'
+router.use('/sendMessage', sendMessageRoute);
+
+import editMessageRoute from './editMessage.js';
+router.use('/edit-message', editMessageRoute);
 
 
 
