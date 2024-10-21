@@ -21,8 +21,6 @@ app.get('/',authenticateToken, async(req, res) => {
             if(Object.keys(query)[0] === 'page' && Object.keys(query)[1] === 'limit' ){ // vérification que les valeurs sont dans page et limit
                 if (parseInt(query.page) > 0 && parseInt(query.limit) > 0) { // vérification que les valeurs sont valides (valeur > 0 )
                     const start = ((query.page -1)*query.limit)
-             //   const end = (query.page*query.limit)+1
-              //  console.log(start + " --- " + end)
                 const stock = (await connection.query(
                     'SELECT * FROM messages WHERE lobby_id = ? LIMIT ? OFFSET ?', [lobbyId, parseInt(query.limit), start]))[0];
                 res.json({message: 'Page envoyée avec succès', stock});
