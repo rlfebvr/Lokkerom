@@ -12,8 +12,8 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "player3@gmail.com",
-    "password": "player3"
+    "email": "player2@gmail.com",
+    "password": "player2"
 }
 ###
 
@@ -39,9 +39,15 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3000/lobby/sendMessage
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Mw.DskTki35U_FXh-7hcUot3Ktb5ZNNrzn_37P14nqe6MY
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Mg.5O2kRS3jzuT6KYOimJSt9APJEvr4ZvV2W_mjkYM8ZWk
 Content-Type: application/json
 
 {
-    "message": "ts"
+    "message": "test7"
 }
+
+###
+
+GET http://localhost:3000/lobby/get-message?page=1&limit=2
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Mg.5O2kRS3jzuT6KYOimJSt9APJEvr4ZvV2W_mjkYM8ZWk
+
