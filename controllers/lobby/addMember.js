@@ -6,6 +6,7 @@ const app = express.Router()
 
 //ajouter des membres à l'équipe
 app.post('/',authenticateToken, async(req, res) => {
+    console.log("test addmember")
     const {memberId, lobbyId} = req.body;
     const coachId = req.user;
     console.log("coachID= "+ coachId)

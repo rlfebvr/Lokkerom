@@ -4,7 +4,7 @@ import connection from "../../dbConnect.js"
 const router = express.Router()
 
 // Route d'inscription
-router.post('*',async (req, res) => {
+router.post('/',async (req, res) => {
     const { email, password} = req.body;
     console.log("body" + req.body)
     try {

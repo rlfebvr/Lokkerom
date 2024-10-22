@@ -6,7 +6,7 @@ Content-Type: application/json
     "password": "player2"
 }
 
-###
+### eyJhbGciOiJIUzI1NiJ9.Ng.JBP2z8P8c3inDXtgmVDPxne1StX_agL493Tok70grrA
 
 POST http://localhost:3000/user/login
 Content-Type: application/json
@@ -17,29 +17,46 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/lobby/create-lobby
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Ng.wzDO5FU7Xvwv64WJSLOtrX3JO1jlf4H3PSFNt78pQFQ
+DELETE http://localhost:3000/user/logout
 Content-Type: application/json
 
 {
-    "lobbyName": "foot"
+    "token":"eyJhbGciOiJIUzI1NiJ9.Ng.JBP2z8P8c3inDXtgmVDPxne1StX_agL493Tok70grrA" 
+}
+
+###
+
+POST http://localhost:3000/user/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.Ng.JBP2z8P8c3inDXtgmVDPxne1StX_agL493Tok70grrA"
+}
+
+###
+POST http://localhost:3000/lobby/create-lobby
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjo2LCJpYXQiOjE3Mjk1ODg2NjJ9.ujglAewBwTPhzcbTRf-w37KVfm5jbBK5qdCWrwC6Cfs
+Content-Type: application/json
+
+{
+    "lobbyName": "basket"
 }
 
 ###
 
 POST http://localhost:3000/lobby/add-member
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Ng.wzDO5FU7Xvwv64WJSLOtrX3JO1jlf4H3PSFNt78pQFQ
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInRCI6IkpXVCJ9.eyJuYW1lIjo2LCJpYXQiOjE3Mjk1ODg2NjJ9.ujglAewBwTPhzcbTRf-w37KVfm5jbBK5qdCWrwC6Cfs
 Content-Type: application/json
 
 {
     "memberId": "6",
-    "lobbyId": "1"
+    "lobbyId": "4"
 }
 
 ###
 
 POST http://localhost:3000/lobby/sendMessage
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Mg.5O2kRS3jzuT6KYOimJSt9APJEvr4ZvV2W_mjkYM8ZWk
+Authorization:Bearer 
 Content-Type: application/json
 
 {

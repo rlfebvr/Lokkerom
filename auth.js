@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import connection from "./dbConnect.js"
 import jwt from 'jsonwebtoken'
 dotenv.config()
 
@@ -7,12 +8,13 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1]
     if (token == null)
         return res.sendStatus(401);
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET,async (err, user) => {
         if (err)
-            return res.sendStatus(403)
-        req.user = user;
-        // update refresh token time in database
-        next();        
+            return res.status(403).json({message: "Auth: Token non valide"})
+        req.user = user.name;
+        console.log("user= "+ Object.keys(user))
+        await connection.query('UPDATE token SET refreshedAt = NOW() WHERE user_id = ?',[user.name])
+        next();
     })
 }
 
