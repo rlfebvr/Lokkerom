@@ -2,10 +2,16 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import connection from "../../dbConnect.js"
 import jwt from 'jsonwebtoken'
+import limiter from 'rate-limiter-flexible'
 const router = express.Router()
+const limiter = rateLimit ({
+    max: 5,
+    TimeBlock: 60 * 60 * 1000, // bloqué 1H
+    message : "trop d'essai vous êtes bloqué"
+})
 
 // Route de connexion
-router.post('*', async(req, res) => {
+router.post('*', limiter ,async(req, res) => {
     const { email, password } = req.body;
 
     try {
@@ -13,7 +19,8 @@ router.post('*', async(req, res) => {
         console.log("rows= " +rows);
         if (rows.length === 0) {
             return res.status(401).json({ message: 'E-mail ou mot de passe incorrect' });
-        }
+            
+        }   
 
         const user = rows[0];
         console.log("user= " + user)
