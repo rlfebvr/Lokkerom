@@ -32,7 +32,7 @@ Tokens are provided in the env file for testing
   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiOCIsImlhdCI6MTczODQ0ODI3NSwiZXhwIjoxNzM4NDQ4MzA1fQ.WBv7QEFphuwyV4wA2R2ahBFdsX0IEB8nzN8GAhpAx2Y"
 }
 
-#### http://localhost:3000/lobby/get-message?page=1&limit=2
+#### lobby/get-message?page=1&limit=2
 
 {  
   "message": "Page sent successfully",  
