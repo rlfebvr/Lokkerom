@@ -3,6 +3,15 @@
 
 Lokkeroom is an api to make different lokker room( a group chat) in which you can have a coach that is the admin of it and a coach can add player to it.
 
+##
+
+### Revelant skill used/learned
+
+- Routing
+- SQL
+- API
+- JWT
+
 ## A coach can:  
 - Create a lobby  
 - Add a player to a lobby
