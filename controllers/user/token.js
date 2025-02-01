@@ -6,6 +6,7 @@ const app = express.Router()
 dotenv.config()
 
 app.post('/',async (req, res) => {
+  const tokenLifeTime = 30
   const refreshTokenClient = req.body.token
   if (refreshTokenClient == null) return res.sendStatus(401).json({message: 'Pas de token envoyé'});
   const refreshTokenServer = (await connection.query(
@@ -14,7 +15,7 @@ app.post('/',async (req, res) => {
   if(refreshTokenServer[0]=== null) return res.status(403).json({message: 'Token non valide'});
   jwt.verify(refreshTokenClient, process.env.REFRESH_TOKEN_SECRET, async (err, user) => {
     if (err) return res.sendStatus(403)
-    const accessToken = jwt.sign({name: user}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: 25});
+    const accessToken = jwt.sign({name: user}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: tokenLifeTime});
     await connection.query('UPDATE token SET refreshedAt = NOW() WHERE user_id = ?',[user.name])
     res.json({ accessToken: accessToken })
   })

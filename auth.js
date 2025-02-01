@@ -12,7 +12,6 @@ function authenticateToken(req, res, next) {
         if (err)
             return res.status(403).json({message: "Auth: Token non valide"})
         req.user = user.name;
-        console.log("user= "+ Object.keys(user))
         await connection.query('UPDATE token SET refreshedAt = NOW() WHERE user_id = ?',[user.name])
         next();
     })

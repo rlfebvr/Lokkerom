@@ -1,10 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mysql from 'mysql2/promise';
-import bcrypt from 'bcrypt';
 import dotenv from 'dotenv'
-import connection from './dbConnect.js'
-import jwt from 'jsonwebtoken'
+
 dotenv.config()
 const app = express();
 const port = process.env.PORT;

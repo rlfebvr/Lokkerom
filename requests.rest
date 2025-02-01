@@ -6,7 +6,7 @@ Content-Type: application/json
     "password": "player2"
 }
 
-### eyJhbGciOiJIUzI1NiJ9.Ng.JBP2z8P8c3inDXtgmVDPxne1StX_agL493Tok70grrA
+###
 
 POST http://localhost:3000/user/login
 Content-Type: application/json
@@ -15,7 +15,7 @@ Content-Type: application/json
     "email": "player2@gmail.com",
     "password": "player2"
 }
-###
+### 
 
 DELETE http://localhost:3000/user/logout
 Content-Type: application/json
@@ -24,13 +24,13 @@ Content-Type: application/json
     "token":"eyJhbGciOiJIUzI1NiJ9.Ng.JBP2z8P8c3inDXtgmVDPxne1StX_agL493Tok70grrA" 
 }
 
-###
+### 
 
 POST http://localhost:3000/user/token
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiJ9.Ng.JBP2z8P8c3inDXtgmVDPxne1StX_agL493Tok70grrA"
+    "token": "eyJhbGciOiJIUzI1NiJ9.Mg.yGnyod7wdQnDV8roX3ahpzH5HzD2YFTKLIKN7VM7Vns"
 }
 
 ###
@@ -66,5 +66,5 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/lobby/get-message?page=1&limit=2
-Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.Mg.5O2kRS3jzuT6KYOimJSt9APJEvr4ZvV2W_mjkYM8ZWk
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiMiIsImlhdCI6MTczODQ0ODQ1MSwiZXhwIjoxNzM4NDQ4NDgxfQ.LA1wSfpROpnDTKmSfbXO0kVrk0eaAwkGVCn4TM2emZE
 
