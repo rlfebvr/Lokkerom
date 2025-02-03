@@ -5,12 +5,12 @@ Lokkeroom is an api to make different lokker room( a group chat) in which you ca
 
 ## How to use
 
-- Use de schematic of the database in database.sql to create it
+- Use the schematic of the database in database.sql to create it
 - Configure the .env from the MODEL.env (Tokens are provided for testing)
 - 'npm install' in the terminal
 - 'node server.js' in the terminal to start the server
 
-## Revelant skill used/learned
+## Relevant skill used/learned
 
 - Routing
 - SQL
